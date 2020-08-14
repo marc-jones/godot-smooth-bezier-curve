@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/scripts/LevelManager.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/Container.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/bee.png" type="Texture" id=3]
+[ext_resource path="res://assets/scripts/Player.gd" type="Script" id=4]
+[ext_resource path="res://assets/scripts/DragIndicator.gd" type="Script" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array(  )
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LevelManager" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Container" type="Path2D" parent="LevelManager"]
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Player" type="Sprite" parent="LevelManager"]
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="DragIndicator" type="Sprite" parent="LevelManager"]
+script = ExtResource( 5 )
